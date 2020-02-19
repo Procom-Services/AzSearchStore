@@ -1,7 +1,7 @@
 import * as searchParameters from "../../reducers/searchParameters";
 import * as suggestionsParameters from "../../reducers/suggestionsParameters";
 import * as input from "../../reducers/input";
-import { Store } from "../../store";
+import * as Store from "../../store";
 import * as uriHelper from "../uriHelper";
 import * as URI from "urijs";
 

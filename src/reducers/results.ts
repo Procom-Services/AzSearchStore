@@ -1,5 +1,5 @@
 import { ResultsAction } from "../actions/resultsActions";
-import { Store } from "../store";
+import * as Store from "../store";
 import { combineReducers } from "redux";
 import { updateObject } from "./reducerUtils";
 

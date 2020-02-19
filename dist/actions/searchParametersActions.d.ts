@@ -1,4 +1,4 @@
-import { Store } from "../store";
+import * as Store from "../store";
 export declare type SearchParametersAction = {
     type: "SET_SEARCH_APIVERSION";
     apiVersion: Store.SearchApiVersion;

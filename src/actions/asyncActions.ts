@@ -1,4 +1,4 @@
-import { Store } from "../store";
+import * as Store from "../store";
 import * as resultsActions from "./resultsActions";
 import * as suggestionsActions from "./suggestionsActions";
 import * as facetsActions from "./facetsActions";
@@ -8,13 +8,14 @@ import { buildSearchURI, buildSuggestionsURI, buildPostBody, suggestParameterVal
 // todo this should probably be at the entry point of app
 promise.polyfill();
 import thunk, { ThunkAction } from "redux-thunk";
+import { Action } from 'redux';
 
 const userAgent = "AzSearchStore/Preview";
 
 const searchAndDispatch: ThunkAction<Promise<void>, Store.SearchState, {
     resultsActionToDispatch: (results: {}[], recievedAt: number, count?: number) => resultsActions.ResultsAction,
     facetsActionToDispatch: (facets: { [key: string]: Store.FacetResult[] }) => facetsActions.FacetsAction
-}> =
+}, Action> =
     (dispatch, getState, {resultsActionToDispatch, facetsActionToDispatch}) => {
         const searchState: Store.SearchState = getState();
         const service = searchState.config.service;
@@ -53,19 +54,19 @@ const searchAndDispatch: ThunkAction<Promise<void>, Store.SearchState, {
             });
     };
 
-export const fetchSearchResults: ThunkAction<Promise<void>, Store.SearchState, {}> = (dispatch, getState) => {
+export const fetchSearchResults: ThunkAction<Promise<void>, Store.SearchState, {}, Action> = (dispatch, getState) => {
     return searchAndDispatch(dispatch, getState, { resultsActionToDispatch: resultsActions.recieveResults, facetsActionToDispatch: facetsActions.setFacetsValues });
 };
 
-export const loadMoreSearchResults: ThunkAction<Promise<void>, Store.SearchState, {}> = (dispatch, getState) => {
+export const loadMoreSearchResults: ThunkAction<Promise<void>, Store.SearchState, {}, Action> = (dispatch, getState) => {
     return searchAndDispatch(dispatch, getState, { resultsActionToDispatch: resultsActions.appendResults, facetsActionToDispatch: null });
 };
 
-export const fetchSearchResultsFromFacet: ThunkAction<Promise<void>, Store.SearchState, {}> = (dispatch, getState) => {
+export const fetchSearchResultsFromFacet: ThunkAction<Promise<void>, Store.SearchState, {}, Action> = (dispatch, getState) => {
     return searchAndDispatch(dispatch, getState, { resultsActionToDispatch: resultsActions.recieveResults, facetsActionToDispatch: facetsActions.updateFacetsValues });
 };
 
-export const suggest: ThunkAction<Promise<void>, Store.SearchState, {}> =
+export const suggest: ThunkAction<Promise<void>, Store.SearchState, {}, Action> =
     (dispatch, getState) => {
         const searchState: Store.SearchState = getState();
         const service = searchState.config.service;

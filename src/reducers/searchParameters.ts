@@ -1,5 +1,5 @@
 import { SearchParametersAction } from "../actions/searchParametersActions";
-import { Store } from "../store";
+import * as Store from "../store";
 import { updateObject } from "./reducerUtils";
 
 export const initialState: Store.SearchParameters = {

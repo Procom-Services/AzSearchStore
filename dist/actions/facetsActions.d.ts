@@ -1,4 +1,4 @@
-import { Store } from "../store";
+import * as Store from "../store";
 export declare type FacetsAction = AddRangeFacetAction | AddCheckboxFacetAction | ToggleCheckboxFacetAction | SetFacetRangeAction | SetFacetModeAction | SetFacetsValuesAction | UpdateFacetValuesAction | ClearFacetsSelectionsAction | SetGlobalFilterAction;
 export declare type ClearFacetsSelectionsAction = {
     type: "CLEAR_FACETS_SELECTIONS";

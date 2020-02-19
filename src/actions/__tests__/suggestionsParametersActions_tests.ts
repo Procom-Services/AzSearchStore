@@ -1,5 +1,5 @@
 import * as suggestionsParametersActions from "../suggestionsParametersActions";
-import { Store } from "../../store";
+import * as Store from "../../store";
 import * as suggestionsParameters from "../../reducers/suggestionsParameters";
 
 describe("actions/suggestionsParameters", () => {

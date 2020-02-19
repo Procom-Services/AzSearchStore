@@ -1,5 +1,5 @@
 import * as configActions from "../configActions";
-import { Store } from "../../store";
+import * as Store from "../../store";
 
 const config: Store.Config = {
     index: "foo",

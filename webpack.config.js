@@ -1,4 +1,5 @@
 module.exports = {
+    mode: "production",
     entry: "./src/AzSearchStore.ts",
     output: {
         filename: "AzSearchStore.bundle.js",
@@ -18,9 +19,9 @@ module.exports = {
     },
 
     module: {
-        loaders: [
+        rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
-        ],
+            {test: /\.tsx?$/, loader: "awesome-typescript-loader"}
+        ]
     },
 };

@@ -1,6 +1,5 @@
 import { ConfigAction } from "../actions/configActions";
-import { Store } from "../store";
-import { combineReducers } from "redux";
+import * as Store from "../store";
 import { updateObject } from "./reducerUtils";
 
 export const initialState: Store.Config = {

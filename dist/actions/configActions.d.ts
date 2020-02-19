@@ -1,4 +1,4 @@
-import { Store } from "../store";
+import * as Store from "../store/index";
 export declare type ConfigAction = {
     type: "SET_CONFIG";
     config: Store.Config;
@@ -6,12 +6,12 @@ export declare type ConfigAction = {
     type: "SET_SEARCH_CALLBACK";
     searchCallback: (state: Store.SearchState, postBody: {
         [key: string]: any;
-    }) => Promise<any>;
+    }, type?: any) => Promise<any>;
 } | {
     type: "SET_SUGGEST_CALLBACK";
     suggestCallback: (state: Store.SearchState, postBody: {
         [key: string]: any;
-    }) => Promise<any>;
+    }, type?: any) => Promise<any>;
 };
 export declare const setConfig: (config: Store.Config) => ConfigAction;
 export declare const setSearchCallback: (searchCallback: (state: Store.SearchState, postBody: {

@@ -1,6 +1,6 @@
 import * as searchParameters from "../searchParameters";
 import * as searchParametersActions from "../../actions/searchParametersActions";
-import { Store } from "../../store";
+import * as Store from "../../store";
 
 
 const initialState = searchParameters.initialState;

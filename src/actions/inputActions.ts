@@ -1,5 +1,3 @@
-import { Store } from "../store";
-
 export type InputAction =
     {
         type: "SET_INPUT"

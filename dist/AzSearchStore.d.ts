@@ -7,7 +7,7 @@ import * as inputActions from "./actions/inputActions";
 import * as facetsActions from "./actions/facetsActions";
 import * as suggestionsActions from "./actions/suggestionsActions";
 import * as resultsActions from "./actions/resultsActions";
-import { Store } from "./store";
+import * as Store from "./store";
 export { asyncActions, configActions, searchParameterActions, suggestionsParameterActions, inputActions, facetsActions, suggestionsActions, resultsActions, Store };
 export declare class AzSearchStore {
     store: redux.Store<Store.SearchState>;
@@ -39,9 +39,9 @@ export declare class AzSearchStore {
     }) => Promise<any>): void;
     setResultsProcessor(resultsProcessor: (results: {}[]) => {}[]): void;
     setSuggestionsProcessor(suggestionsProcessor: (suggestions: {}[]) => {}[]): void;
-    search(): Promise<void>;
-    loadMore(): Promise<void>;
-    searchFromFacetAction(): Promise<void>;
-    suggest(): Promise<void>;
+    search(): any;
+    loadMore(): any;
+    searchFromFacetAction(): any;
+    suggest(): any;
     clearSuggestions(): suggestionsActions.SuggestionsAction;
 }

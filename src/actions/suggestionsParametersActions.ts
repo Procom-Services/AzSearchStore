@@ -1,4 +1,4 @@
-import { Store } from "../store";
+import * as Store from "../store";
 
 export type SuggestionsParametersAction =
     {

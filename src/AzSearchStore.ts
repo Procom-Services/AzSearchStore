@@ -1,6 +1,5 @@
 import * as redux from "redux";
 import ReduxThunk from "redux-thunk";
-import * as promise from "es6-promise";
 import { reducers } from "./reducers/reducers";
 import * as asyncActions from "./actions/asyncActions";
 import * as configActions from "./actions/configActions";
@@ -10,7 +9,7 @@ import * as inputActions from "./actions/inputActions";
 import * as facetsActions from "./actions/facetsActions";
 import * as suggestionsActions from "./actions/suggestionsActions";
 import * as resultsActions from "./actions/resultsActions";
-import { Store } from "./store";
+import * as Store from "./store";
 
 export { asyncActions, configActions, searchParameterActions, suggestionsParameterActions, inputActions, facetsActions, suggestionsActions, resultsActions, Store };
 
@@ -51,10 +50,10 @@ export class AzSearchStore {
         this.store.dispatch(searchParameterActions.updateSearchParameters(searchParametersUpdate));
     }
     public incrementSkip() {
-        this.store.dispatch(searchParameterActions.incrementSkip);
+        this.store.dispatch<any>(searchParameterActions.incrementSkip);
     }
     public decrementSkip() {
-        this.store.dispatch(searchParameterActions.decrementSkip);
+        this.store.dispatch<any>(searchParameterActions.decrementSkip);
     }
 
     public setPage(page: number) {
@@ -118,19 +117,19 @@ export class AzSearchStore {
     // search
 
     public search() {
-        return this.store.dispatch(asyncActions.fetchSearchResults);
+        return this.store.dispatch<any>(asyncActions.fetchSearchResults);
     }
     public loadMore() {
-        return this.store.dispatch(asyncActions.loadMoreSearchResults);
+        return this.store.dispatch<any>(asyncActions.loadMoreSearchResults);
     }
     public searchFromFacetAction() {
-        return this.store.dispatch(asyncActions.fetchSearchResultsFromFacet);
+        return this.store.dispatch<any>(asyncActions.fetchSearchResultsFromFacet);
     }
 
     // suggest
 
     public suggest() {
-        return this.store.dispatch(asyncActions.suggest);
+        return this.store.dispatch<any>(asyncActions.suggest);
     }
 
     public clearSuggestions() {

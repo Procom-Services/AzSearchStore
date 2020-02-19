@@ -1,6 +1,6 @@
 import * as suggestionsParameters from "../suggestionsParameters";
 import * as suggestionsParametersActions from "../../actions/suggestionsParametersActions";
-import { Store } from "../../store";
+import * as Store from "../../store";
 
 
 const initialState = suggestionsParameters.initialState;

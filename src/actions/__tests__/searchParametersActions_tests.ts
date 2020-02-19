@@ -1,5 +1,5 @@
 import * as searchParametersActions from "../searchParametersActions";
-import { Store } from "../../store";
+import * as Store from "../../store";
 import * as searchParameters from "../../reducers/searchParameters";
 
 describe("actions/searchParameters", () => {

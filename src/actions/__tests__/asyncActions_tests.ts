@@ -2,7 +2,7 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import * as nock from "nock";
 import * as actions from "../asyncActions";
-import { Store } from "../../store";
+import * as Store from "../../store";
 import * as searchParameters from "../../reducers/searchParameters";
 import * as suggestionsParameters from "../../reducers/suggestionsParameters";
 import * as input from "../../reducers/input";
@@ -77,7 +77,7 @@ describe("actions/async", () => {
 
         const store = mockStore({ config, parameters: parameterInitialState, facets });
 
-        store.dispatch(actions.fetchSearchResults).then(() => {
+        store.dispatch<any>(actions.fetchSearchResults).then(() => {
             expect(store.getActions()).toEqual(expectedActions);
         });
     });
@@ -95,7 +95,7 @@ describe("actions/async", () => {
 
         const store = mockStore({ config, parameters: parameterInitialState, facets });
 
-        store.dispatch(actions.loadMoreSearchResults).then(() => {
+        store.dispatch<any>(actions.loadMoreSearchResults).then(() => {
             expect(store.getActions()).toEqual(expectedActions);
         });
     });
@@ -114,7 +114,7 @@ describe("actions/async", () => {
 
         const store = mockStore({ config, parameters: parameterInitialState, facets });
 
-        store.dispatch(actions.fetchSearchResultsFromFacet).then(() => {
+        store.dispatch<any>(actions.fetchSearchResultsFromFacet).then(() => {
             expect(store.getActions()).toEqual(expectedActions);
         });
     });
@@ -131,7 +131,7 @@ describe("actions/async", () => {
 
         const store = mockStore({ config, parameters: parameterInitialState, facets });
 
-        store.dispatch(actions.suggest).then(() => {
+        store.dispatch<any>(actions.suggest).then(() => {
             expect(store.getActions()).toEqual(expectedActions);
         });
     });
