@@ -53,19 +53,19 @@ const searchAndDispatch: ThunkAction<Promise<void>, Store.SearchState, {
             });
     };
 
-export const fetchSearchResults: ThunkAction<Promise<void>, Store.SearchState, {}> = (dispatch, getState) => {
+export const fetchSearchResults: ThunkAction<Promise<void>, Store.SearchState, {}, any> = (dispatch, getState) => {
     return searchAndDispatch(dispatch, getState, { resultsActionToDispatch: resultsActions.recieveResults, facetsActionToDispatch: facetsActions.setFacetsValues });
 };
 
-export const loadMoreSearchResults: ThunkAction<Promise<void>, Store.SearchState, {}> = (dispatch, getState) => {
+export const loadMoreSearchResults: ThunkAction<Promise<void>, Store.SearchState, {}, any> = (dispatch, getState) => {
     return searchAndDispatch(dispatch, getState, { resultsActionToDispatch: resultsActions.appendResults, facetsActionToDispatch: null });
 };
 
-export const fetchSearchResultsFromFacet: ThunkAction<Promise<void>, Store.SearchState, {}> = (dispatch, getState) => {
+export const fetchSearchResultsFromFacet: ThunkAction<Promise<void>, Store.SearchState, {}, any> = (dispatch, getState) => {
     return searchAndDispatch(dispatch, getState, { resultsActionToDispatch: resultsActions.recieveResults, facetsActionToDispatch: facetsActions.updateFacetsValues });
 };
 
-export const suggest: ThunkAction<Promise<void>, Store.SearchState, {}> =
+export const suggest: ThunkAction<Promise<void>, Store.SearchState, {}, any> =
     (dispatch, getState) => {
         const searchState: Store.SearchState = getState();
         const service = searchState.config.service;
