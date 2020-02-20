@@ -26,9 +26,9 @@ export declare class AzSearchStore {
     updateSuggestionsParameters(suggestionsParametersUpdate: Store.SuggestionsParametersUpdate): void;
     setInput(input: string): void;
     addRangeFacet(fieldName: string, dataType: Store.RangeDataType, min: number | Date, max: number | Date): void;
-    addCheckboxFacet(fieldName: string, dataType: Store.CheckboxDataType): void;
+    addCheckboxFacet(fieldName: string, dataType: Store.CheckboxDataType, count?: number): void;
     toggleCheckboxFacet(fieldName: string, value: string | number): void;
-    setFacetRange(fieldName: string, lowerBound: number, upperBound: number): void;
+    setFacetRange(fieldName: string, lowerBound: number | Date, upperBound: number | Date): void;
     clearFacetsSelections(): void;
     setGlobalFilter(key: string, filter: string): void;
     setSearchCallback(searchCallback: (state: Store.SearchState, postBody: {

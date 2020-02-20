@@ -240,10 +240,10 @@ function addRangeFacetAction(state: Store.Facets, action: AddRangeFacetAction): 
     return updateObject(state, { facets });
 }
 
-function addCheckboxFacet(state: Store.Facets, action: AddCheckboxFacetAction, count = 5): Store.Facets {
+function addCheckboxFacet(state: Store.Facets, action: AddCheckboxFacetAction): Store.Facets {
     const { dataType, key } = action;
     const sort = "count";
-    count = count < 1 ? 5 : Math.floor(count);
+    const count = action.count < 1 ? 5 : Math.floor(action.count);
 
     switch (dataType) {
         case "number":

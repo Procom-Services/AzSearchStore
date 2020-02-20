@@ -63,8 +63,9 @@ var AzSearchStore = /** @class */ (function () {
     AzSearchStore.prototype.addRangeFacet = function (fieldName, dataType, min, max) {
         this.store.dispatch(facetsActions.addRangeFacet(fieldName, dataType, min, max));
     };
-    AzSearchStore.prototype.addCheckboxFacet = function (fieldName, dataType) {
-        this.store.dispatch(facetsActions.addCheckboxFacet(fieldName, dataType));
+    AzSearchStore.prototype.addCheckboxFacet = function (fieldName, dataType, count) {
+        if (count === void 0) { count = 5; }
+        this.store.dispatch(facetsActions.addCheckboxFacet(fieldName, dataType, count));
     };
     AzSearchStore.prototype.toggleCheckboxFacet = function (fieldName, value) {
         this.store.dispatch(facetsActions.toggleCheckboxFacetSelection(fieldName, value));

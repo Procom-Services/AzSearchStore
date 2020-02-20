@@ -209,11 +209,10 @@ function addRangeFacetAction(state, action) {
     var facets = updateObjectAtKey(state.facets, rangeFacet, key);
     return updateObject(state, { facets: facets });
 }
-function addCheckboxFacet(state, action, count) {
-    if (count === void 0) { count = 5; }
+function addCheckboxFacet(state, action) {
     var dataType = action.dataType, key = action.key;
     var sort = "count";
-    count = count < 1 ? 5 : Math.floor(count);
+    var count = action.count < 1 ? 5 : Math.floor(action.count);
     switch (dataType) {
         case "number":
         case "collection":
